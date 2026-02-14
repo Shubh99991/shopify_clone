@@ -1,0 +1,23 @@
+ul{
+    list-style-type: none;
+           
+}
+li{ 
+    /* display: inline*/
+    float: right;
+}
+li a{
+    padding: 10px;
+    text-decoration: none;
+}
+nav{
+    background: black;
+    margin: auto;
+}
+h2{
+    color: white;
+}
+
+.c11:hover{
+    transform: scale(1.05);
+}

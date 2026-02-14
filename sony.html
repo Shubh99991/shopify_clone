@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Detail Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body{
+          background-color: rgb(159, 255, 234);
+        }
+    nav{
+        background-color: rgb(181, 255, 108);
+        position: sticky;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      padding: 0px 20px 20px 20px;
+    }
+
+    .product-img {
+
+      width: 100%;
+      border-radius: 10px;
+      padding-top: 50px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+      margin-left: 10px;
+    }
+
+    .qty-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .rating {
+        
+        color: #ffc107;
+    }
+
+    .add-btn {
+        width: 100%;
+        padding-top: 10px;
+        font-size: 18px;
+    }
+    .h11{
+        padding-bottom: 4px;
+    }
+    .h22{
+        padding-bottom: 10px;
+    }
+    .h33{
+        padding-top: 40px;
+        color: #5a4d26;
+    }
+    .h44{
+        padding-top: 40px;
+    }
+    h3{
+      color: #5a4d26;
+    }
+  </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SHOPIFY</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cart</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Catogries
+          </a>
+          
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Smartphone</a></li>
+            <li><a class="dropdown-item" href="#">Laptop</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Login</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class=" h66 container mt-5"  >
+  <div class="row justify-content-center" >
+    <div class="col-sm-10" style="margin-top: 60px;" >
+      <div class="product-card" >
+        <div class="row" >
+          
+          
+          <div class="col-sm-6">
+            
+            <img src="./sony.jpg" class="product-img" alt="Product">
+          
+          </div>
+
+          
+          <div class="h44 col-sm-6">
+            <h3>Soney SRS-XV500</h3>
+
+            <p class="h33 text-muted">
+                <h6>Performance:</h6>
+                <p>X-Balanced Speaker Units deliver powerful, clear sound with deep bass — ideal for parties and music playback</p>
+                <h6>Connectivity:</h6>
+                <p>Bluetooth 5.2 for wireless streaming from phones and tablets</span>
+                <span>Supported Codecs: SBC, AAC, LDAC for quality music playback.</p>
+                <h6>Battery</h6>
+                <span>Dual Mic & Guitar Inputs for karaoke and live jamming</span>
+                <span>Up to ~25 hours playtime per charge (varies with volume)</span>
+            </p>
+            <br>
+
+            
+
+            <div class="rating sm-2">
+              ★★★★☆
+            </div>
+            
+            <div class="h11 col-sm-3">
+              <span class="price">35,000RS</span>
+              <span class="old-price">40,999RS</span>
+            </div>
+
+            
+            <div class="h22 d-flex align-items-center col-sm-3">
+              <button class="btn btn-outline-danger qty-btn" onclick="decreaseQty()">-</button>
+              <input type="text" id="quantity" class="form-control text-center sm-2" value="1" style="width:70px;">
+              <button class="btn btn-outline-danger qty-btn" onclick="increaseQty()">+</button>
+            </div>
+
+            
+            <div class="row">
+              <div class="col-sm-6">
+                <button class="btn btn-primary add-btn" onclick="addToCart()">
+                  Add to Cart
+                </button>
+              </div>
+
+            <div class="col-sm-6">
+              <a href="#"><button class="btn btn-primary add-btn">
+                  Buy Now
+              </button>
+              </a>
+            </div>
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function increaseQty() {
+    let qty = document.getElementById("quantity");
+    qty.value = parseInt(qty.value) + 1;
+  }
+
+  function decreaseQty() {
+    let qty = document.getElementById("quantity");
+    if (qty.value > 1) {
+      qty.value = parseInt(qty.value) - 1;
+    }
+  }
+
+  function addToCart() {
+    let qty = document.getElementById("quantity").value;
+    alert("Added " + qty + " item(s) to cart!");
+  }
+</script>
+
+</body>
+</html>
